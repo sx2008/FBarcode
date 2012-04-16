@@ -1,0 +1,121 @@
+Question & Ansers
+
+
+
+> How do you install your Barcode component into delphi ?
+
+This topic is covered by the online help.
+It depends on your delphi version.
+
+http://info.borland.com/techpubs/delphi/delphi5/dg/packcomp.html#10300
+
+
+Quickstart for Delphi 5:
+
+select Components -> Install Component in the IDE menu
+
+name of unit:      ...../barcode.pas
+name of package:   ...../dclusr50.dpk
+
+Press the "ok" Button.
+
+
+> Does your barcode component works with Delphi 7 ?
+
+Yes. The sourcecode does not rely on any language specific features.
+It will probably compile under Delphi 8 and higher.
+
+
+> Does your barcode component works with Kylix ? 
+
+Yes, my barcode component does not use any special Windows API
+functions; so it should work with Kylix (untested).
+
+
+
+> do i have to install the barcode component to run the demo ?
+
+No.
+The demo can be compiled without installing the component;
+but the units barcode.pas and barcode2.pas must be present in
+the project directory.
+
+> where can i download the latest version ?
+
+http://mitglied.lycos.de/AJSchmidt/fbarcode.zip
+
+> what is the latest version
+
+Version 1.27
+
+
+
+> i can't install this component in delphi 5.......
+> one of troubles is duplicate resources ,
+> barcorde.d32 discarded......????
+
+there are 2 resource files (comes with fbarcode.zip):
+
+barcode.d16  - for Delphi 1
+barcode.d32  - for Delphi 2-7
+
+one of this resource files is included in
+'barcode.pas'.
+
+remove the file 'barcode.dcr' from your package and
+delete this file because Delphi adds this file
+to your package if it exists.
+
+
+> Is it possible, using your component, print a barcode (size=42 chars, 
+> type=2_5_interleaved), exactily in this size: 13mm x 103mm ?
+
+It depends on the resolution of your destination canvas.
+The height of the barcode is not a problem, but the width.
+Every line of a barcode needs one or more dots on the canvas,
+but there are no fractional parts.
+
+Because of this limitation the width of a barcode can only
+have distinct values.
+
+There higher the resolution of printer, the better the
+approach to the desired barcode width.
+
+> When I try to install it I can't find the file 'dclusr50.dpk'.
+> How can I get it ?
+'dclusr50.dpk' is a default package that Borland provided for your (user)components.
+It is located in "C:\programms\Borland\Delphi5\Lib"
+You are not forced to use this package; you could also create a new package (run & designtime)
+to install components.
+
+
+
+> Ich habe eine Frage bzgl. der Barcodebreite. Ich möchte einen 
+> 40stelligen
+> numerischen Barcode (derzeit Typ "Code128C") auf eine 
+> bestimmte, in einem
+> Formular zur Verfügung stehende Breite "ziehen". Gibt es eine 
+> Möglichkeit,
+> ausser mit Modul und Ratio zu experimentieren, eine definierte Breite
+> vorzugeben bzw. auf eine Breite den Barcode zu strecken?
+
+
+Nein, eine ganz bestimmte definierte Breite ist technisch
+nicht möglich.
+Grund: 
+   ein Barcode besteht aus schmalen und breiten Strichen.
+   Beide Strichbreiten können nur ein Vielfaches eines Pixels sein.
+   (es gibt keine halben Pixel)
+   Damit kann der gesamte Barcode auch nur ganz bestimmte Breiten
+   einnehmen.
+
+Je höher die Auflösung des Ziel-Canvas, umso feiner kann die Breite
+des Barcodes über die Eigenschaft "Modul" gesteuert werden.
+
+Bei neueren Versionen (z.Zt. 1.23) der Komponente ist die
+Eigenschaft "Width" beschreibbar.
+Bei Zuweisung eines Wertes an Width wird versucht, die
+Gesamtbreite so gut wie möglich zu treffen, indem das Property
+"Modul" entsprechend verändert wird.
+
+

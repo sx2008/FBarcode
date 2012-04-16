@@ -1,0 +1,13 @@
+*.~*
+*.exe
+*.local
+*.identcache
+*.res
+*.dcu
+*.asm
+*.rar
+*.bak
+*.dsk
+*.cfg
+thumbs.db
+Private/
