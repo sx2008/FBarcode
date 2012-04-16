@@ -1,13 +1,21 @@
+# Delphi files
 *.~*
 *.exe
+*.map
+*.gex
 *.local
 *.identcache
 *.res
 *.dcu
-*.asm
-*.rar
-*.bak
 *.dsk
 *.cfg
+__history/
+
+# other files
 thumbs.db
+# *.asm
+*.rar
+*.bak
+
+# directory for local,private stuff
 Private/
