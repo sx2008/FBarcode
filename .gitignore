@@ -9,6 +9,7 @@
 *.dcu
 *.dsk
 *.cfg
+*.dof
 __history/
 
 # other files
